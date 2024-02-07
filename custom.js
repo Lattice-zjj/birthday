@@ -13,7 +13,10 @@ $(function () {
         dom.appendChild(p);
     });
     $("#texts-container").append(dom.innerHTML);
+    
 });
+
+
 
 $(function () {
     for (let k in config.desc) {
@@ -23,3 +26,4 @@ $(function () {
         }
     }
 });
+

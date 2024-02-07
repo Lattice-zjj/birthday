@@ -256,7 +256,7 @@ $('document').ready(function(){
 		$('#bulb_pink').addClass('bulb-glow-pink');
 		$('#bulb_orange').addClass('bulb-glow-orange');
 		$('body').addClass('peach');
-		$(this).fadeOut('slow').delay(5000).promise().done(function(){
+		$(this).fadeOut('slow').delay(1000).promise().done(function(){
 			$('#play').fadeIn('slow');
 		});
 		playMusic();
@@ -274,21 +274,21 @@ $('document').ready(function(){
 		$('#bulb_orange').addClass('bulb-glow-orange-after');
 		$('body').css('backgroud-color','#FFF');
 		$('body').addClass('peach-after');
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+		$(this).fadeOut('slow').delay(1000).promise().done(function(){
 			$('#bannar_coming').fadeIn('slow');
 		});
-		// 在最后调用 bannerComing()
 		bannerComing();
 	}
 
 	function bannerComing() {
 		// 实现 #bannar_coming 的点击事件逻辑
 		$('.bannar').addClass('bannar-come');
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+		$(this).fadeOut('slow').delay(1000).promise().done(function(){
 			$('#balloons_flying').fadeIn('slow');
+			
 		});
-		// 在最后调用 balloonsFlying()
 		balloonsFlying();
+		
 	}
 
 	function loopOne() {
@@ -366,8 +366,8 @@ $('document').ready(function(){
 		
 		$(this).fadeOut('slow').delay(5000).promise().done(function(){
 			$('#cake_fadein').fadeIn('slow');
+			
 		});
-		// 在最后调用 cakeFadeIn()
 		cakeFadeIn();
 	}
 
@@ -376,8 +376,8 @@ $('document').ready(function(){
 		$('.cake').fadeIn('slow');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
+			
 		});
-		// 在最后调用 lightCandle()
 		lightCandle();
 	}
 
@@ -386,8 +386,8 @@ $('document').ready(function(){
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
+			
 		});
-		// 在最后调用 wishMessage()
 		wishMessage();
 	}
 
@@ -414,9 +414,10 @@ $('document').ready(function(){
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#story').fadeIn('slow');
+			
 		});
-		// 在最后调用 story()
 		story();
+		
 	}
 
 	function story() {
@@ -429,12 +430,15 @@ $('document').ready(function(){
 		var i;
 
 		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
+			$("p:nth-child("+i+")").fadeOut('slow').delay(1000).promise().done(function(){
 			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
+			$("p:nth-child("+i+")").fadeIn('slow').delay(2000);
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
+				});
+				$(function showLastImage() {
+					$('#last-image').fadeIn('slow'); // 渐显效果
 				});
 				
 			}
@@ -449,6 +453,7 @@ $('document').ready(function(){
 		msgLoop(0);
 		// 这是自动化流程的最后一步
 		// 你可以在这里结束或者开始一个新的循环/逻辑
+		
 	}
 // 	$('#play').click(function(){
 // 		var audio = $('.song')[0];
